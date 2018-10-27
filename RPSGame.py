@@ -73,7 +73,6 @@ while player is False:
         exit()
     
     
-    
     # reset the game loop and start over again
     player = False
     computer_choice = choices[randint(0, 2)]
