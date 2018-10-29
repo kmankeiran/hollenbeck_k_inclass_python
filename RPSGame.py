@@ -19,6 +19,8 @@ computer_choice_lives = 3
 # set up our loop
 while player is False:
     #set player to True by making a selection
+    print("Player lives:", player_lives, "/3")
+    print("Computer lives:", computer_choice_lives, "/3")
     print("Choose your weapon!")
     player = input("Rock, Paper or Scissors?\n")
 
@@ -65,13 +67,26 @@ while player is False:
 
     #If the player or the computer loses all of their lives, then the game ends
     if (computer_choice_lives < 1):
-        print("Congratulations! You just beat a computer at a game. Now go outside")
-        exit()
+        print("Congratulations! You just beat a computer at a game. Now go outside. Or do you want to play again?")
+        Ans = input("Y / N")
+        if(Ans == "Y"):
+            player_lives = 3
+            computer_choice_lives = 3
+            player = False
+
+        else:
+            exit()
     
     elif (player_lives < 1):
-        print("You lost the game. Better luck next time")
-        exit()
-    
+        print("You lost the game. Better luck next time, do you want to play again?")
+        Ans = input("Y / N")
+        if(Ans == "Y"):
+            player_lives = 3
+            computer_choice_lives = 3
+            player = False
+
+        else:
+            exit()
     
     
     # reset the game loop and start over again
