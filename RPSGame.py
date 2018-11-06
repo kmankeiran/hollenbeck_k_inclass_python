@@ -7,11 +7,40 @@ choices = ["Rock", "Paper", "Scissors"]
 player = False
 
 player_lives = 3
+computer_choice_lives = 3
 
 # make the computer choose 1 wepon from the choices array at random
 computer_choice = choices[randint(0,2)]
 
-computer_choice_lives = 3
+# win or lose function
+def winorlose(status):
+    print("Called win or lose function")
+    print("***************************************")
+    print("You", status, "! Would you like to play again?")
+    choice = input("Y / N: ")
+
+
+    #reset the lives
+    if choice == "Y" or choice == "y"
+        # change global variables
+        global player_lives
+        global computer_choice_lives
+        global player
+        global computer
+
+        player_lives = 5
+        computer_choice_lives = 5
+        player = False
+        computer =choices[randint(0, 2)]
+
+    elif choice == "N" or choice == "n"
+        print("you chose to quit!")
+        print("**************************")
+        exit()
+
+
+
+
 
 # print the choice to the terminal window
 
@@ -67,26 +96,10 @@ while player is False:
 
     #If the player or the computer loses all of their lives, then the game ends
     if (computer_choice_lives < 1):
-        print("Congratulations! You just beat a computer at a game. Now go outside. Or do you want to play again?")
-        Ans = input("Y / N")
-        if(Ans == "Y"):
-            player_lives = 3
-            computer_choice_lives = 3
-            player = False
-
-        else:
-            exit()
+        winorlose("won")
     
     elif (player_lives < 1):
-        print("You lost the game. Better luck next time, do you want to play again?")
-        Ans = input("Y / N")
-        if(Ans == "Y"):
-            player_lives = 3
-            computer_choice_lives = 3
-            player = False
-
-        else:
-            exit()
+        winorlose("lose")
     
     
     # reset the game loop and start over again
